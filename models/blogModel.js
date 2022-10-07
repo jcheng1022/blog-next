@@ -1,4 +1,5 @@
 import { Schema, model, models } from "mongoose";
+import mongoose from "mongoose";
 
 const entrySchema = new Schema({
   title: {
@@ -23,6 +24,6 @@ const entrySchema = new Schema({
   },
 });
 
-const BlogEntry = models.Blog || model("Entry", entrySchema);
+const BlogEntry = mongoose.models.Entry || mongoose.model("Entry", entrySchema);
 
 export default BlogEntry;
